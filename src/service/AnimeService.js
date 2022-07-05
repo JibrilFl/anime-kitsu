@@ -10,8 +10,8 @@ class AnimeService {
         return await res.json();
     }
 
-    getCharacter = async () => {
-        const res = await this.getResource('https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0');
+    getCharacter = async (offset) => {
+        const res = await this.getResource(`https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=${offset}`);
         return res;
     }
 }
